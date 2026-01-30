@@ -56,7 +56,6 @@ modules:
   - name: mit-krb5
     buildsystem: autotools
     config-opts:
-      - --prefix=/app
       - --disable-static
       - --without-system-verto
       - --without-libedit
