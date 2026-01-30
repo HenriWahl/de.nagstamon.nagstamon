@@ -232,7 +232,8 @@ modules:
   - name: python3-requests-kerberos
     buildsystem: simple
     build-options:
-      append-path: /app/bin
+      env:
+        PATH: /app/bin:/usr/bin:/bin
     build-commands:
       - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}  --no-build-isolation
         requests-kerberos
