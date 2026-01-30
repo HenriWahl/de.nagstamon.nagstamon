@@ -39,6 +39,8 @@ modules:
       - --sbindir=${FLATPAK_DEST}/bin
       - --disable-static
       - --disable-rpath
+    # Note: /bin is NOT cleaned up here because krb5-config is needed
+    # for building the gssapi Python package later in python-modules.yml
     cleanup:
       - /share/et
       - /share/examples
