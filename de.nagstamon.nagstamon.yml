@@ -54,13 +54,15 @@ modules:
 
   # MIT Kerberos for gssapi Python package
   # Note: Using 1.22 from GitHub mirror (kerberos.org is unreliable, 1.21.3 has build issues)
+  # GitHub archives don't include generated configure scripts, so we need to run autoreconf
   - name: mit-krb5
-    buildsystem: autotools
-    config-opts:
-      - --disable-static
-      - --without-system-verto
-      - --without-libedit
+    buildsystem: simple
     subdir: src
+    build-commands:
+      - autoreconf -i
+      - ./configure --prefix=/app --disable-static --without-system-verto --without-libedit
+      - make
+      - make install
     cleanup:
       - /share/man
       - /share/examples
