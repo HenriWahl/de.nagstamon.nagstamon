@@ -40,7 +40,6 @@ modules:
       - --disable-static
       - --disable-rpath
     cleanup:
-      - /bin
       - /share/et
       - /share/examples
       - /share/man
