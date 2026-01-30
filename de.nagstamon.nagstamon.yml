@@ -55,6 +55,8 @@ modules:
   # MIT Kerberos for gssapi Python package
   - name: mit-krb5
     buildsystem: autotools
+    build-options:
+      cflags: -Wno-error=incompatible-pointer-types -Wno-error=int-conversion -Wno-error=implicit-function-declaration
     config-opts:
       - --disable-static
       - --without-system-verto
