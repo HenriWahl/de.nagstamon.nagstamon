@@ -53,7 +53,7 @@ modules:
           url-template: https://dbus.freedesktop.org/releases/dbus-python/dbus-python-$version.tar.gz
 
   # MIT Kerberos for gssapi Python package
-  # Note: Using 1.21.4 to avoid compilation errors in 1.21.3 with modern compilers
+  # Note: Using 1.22 from GitHub mirror (kerberos.org is unreliable, 1.21.3 has build issues)
   - name: mit-krb5
     buildsystem: autotools
     config-opts:
@@ -69,12 +69,12 @@ modules:
       - '*.la'
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.21/krb5-1.21.4.tar.gz
-        sha256: 2fe5c2c20fbb886c6f0a5c0f68b1016bd7ef1cf8849e39f6cc6a6f4ec7a8b4f1
+        url: https://github.com/krb5/krb5/archive/refs/tags/krb5-1.22-final.tar.gz
+        sha256: 686f7251da4b1ffcba1112b4b25c888890dac3227f9b84151bb41fce4ffc2d78
         x-checker-data:
           type: anitya
           project-id: 13287
-          url-template: https://kerberos.org/dist/krb5/$major.$minor/krb5-$version.tar.gz
+          url-template: https://github.com/krb5/krb5/archive/refs/tags/krb5-$version-final.tar.gz
 
   # external python modules
   - python-modules.yml
