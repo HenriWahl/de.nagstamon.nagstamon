@@ -231,6 +231,8 @@ modules:
 
   - name: python3-requests-kerberos
     buildsystem: simple
+    build-options:
+      append-path: /app/bin
     build-commands:
       - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}  --no-build-isolation
         requests-kerberos
@@ -239,8 +241,11 @@ modules:
         url: https://files.pythonhosted.org/packages/cc/fd/06a7618de50ad13b7e85115bd1e42c1625e3365313a4c971898386781f89/pyspnego-0.10.2-py3-none-any.whl
         sha256: 3d5c5c28dbd0cd6a679acf45219630254db3c0e5ad4a16de521caa0585b088c0
       - type: file
-        url: https://files.pythonhosted.org/packages/13/e7/dd88180cfcf243be62308707cc2f5dae4c726c68f30b9367931c794fda16/gssapi-1.8.3.tar.gz
-        sha256: aa3c8d0b1526f52559552bb2c9d2d6be013d76a8e5db00b39a1db5727e93b0b0
+        url: https://files.pythonhosted.org/packages/23/52/c1e90623c259a42ab0587078bb04f959867b970add46ff66750ead8fc7c5/gssapi-1.11.1.tar.gz
+        sha256: 2049ee4b1d0c363163a1344b7282a363f9f4094e51d2c36de0cf01d4735e0ae2
+        #x-checker-data:
+        #  name: gssapi
+        #  type: pypi
       - type: file
         url: https://files.pythonhosted.org/packages/fc/84/5748f255f1689c95cf8dd0f2789480f7261ec0c82880a6a1f4daead6894d/Cython-3.0.9-py2.py3-none-any.whl
         sha256: bf96417714353c5454c2e3238fca9338599330cf51625cdc1ca698684465646f
