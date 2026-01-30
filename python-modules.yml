@@ -233,7 +233,7 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        PATH: /app/bin:/usr/bin:/bin
+        PATH: /app/bin:/usr/bin:/bin:/usr/sbin:/sbin
     build-commands:
       - pip3 install --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST}  --no-build-isolation
         requests-kerberos
